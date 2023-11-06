@@ -1,0 +1,15 @@
+[package]
+name = "dsll"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rouzbeh Sabzehei <rouzbehsbz@gmail.com>"]
+description = "Fast Thread Safe Doubly Sorted Linked List"
+keywords = ["linked list", "sorted linked list", "doubly sorted linked list", "thread safe linked list", "concurrent linked list"]
+
+[lib]
+name = "dsll"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
