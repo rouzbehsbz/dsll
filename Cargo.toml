@@ -2,6 +2,7 @@
 name = "dsll"
 version = "0.1.0"
 edition = "2021"
+license-file = "LICENSE"
 authors = ["Rouzbeh Sabzehei <rouzbehsbz@gmail.com>"]
 description = "Fast Thread Safe Doubly Sorted Linked List"
 keywords = ["linked list", "sorted linked list", "doubly sorted linked list", "thread safe linked list", "concurrent linked list"]
