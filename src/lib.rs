@@ -108,4 +108,41 @@ where T: Ord + Clone + Debug + Default
             current_node = next_node;   
         }
     }
+
+    pub fn is_sorted(&self) -> bool {
+        let mut current_node = self.head.clone();
+        let mut prev_node_value: Option<T> = None;
+        let mut is_sorted = true;
+
+        loop {
+            let guarded_current_node = current_node.lock().unwrap();
+
+            if guarded_current_node.is_none() {
+                break;
+            }
+
+            if !guarded_current_node.as_ref().unwrap().is_helper {
+                match prev_node_value {
+                    Some(prev_node_value) => {
+                        if prev_node_value > guarded_current_node.as_ref().unwrap().value {
+                            is_sorted = false;
+                            
+                            break;
+                        }
+                    },
+                    None => {}
+                }
+
+                prev_node_value = Some(guarded_current_node.as_ref().unwrap().value.clone());
+            }
+
+            let next_node = guarded_current_node.as_ref().unwrap().next.clone();
+
+            drop(guarded_current_node);
+    
+            current_node = next_node;   
+        }
+
+        is_sorted
+    }
 }
