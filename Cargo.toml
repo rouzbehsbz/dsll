@@ -7,6 +7,7 @@ description = "Fast Thread Safe Doubly Sorted Linked List"
 keywords = ["linked list", "sorted linked list", "doubly sorted linked list", "thread safe linked list", "concurrent linked list"]
 categories = ["algorithms", "data-structures"]
 repository = "https://github.com/rouzbehsbz/dsll"
+readme = "README.md"
 
 [lib]
 name = "dsll"
